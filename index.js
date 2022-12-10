@@ -6,7 +6,6 @@ const passwordValidator = require('password-validator');
 const validator=require("validator");
 
 const app=express();
-const port=process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.set("view engine","ejs");
@@ -85,6 +84,6 @@ app.route("/register")
   }
 });
 
-app.listen(port,function(){
+app.listen(3000,function(){
   console.log("PORT:3000 running");
 });
