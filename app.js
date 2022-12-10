@@ -6,6 +6,7 @@ const passwordValidator = require('password-validator');
 const validator=require("validator");
 
 const app=express();
+const port=process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.set("view engine","ejs");
@@ -72,7 +73,7 @@ app.route("/register")
     email:req.body.email,
     phone:req.body.phone,
     password:req.body.password});
-  
+
 
   newPatient.save(function(err) {
     if (!err) {
@@ -84,6 +85,6 @@ app.route("/register")
   }
 });
 
-app.listen(3000,function(){
+app.listen(port,function(){
   console.log("PORT:3000 running");
 });
